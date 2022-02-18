@@ -1,8 +1,13 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
+require('update-electron-app')({
+  repo: 'https://github.com/ManSuperman/electron-quick-start',
+  updateInterval: '5 minutes',
+  logger: require('electron-log')
+})
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
